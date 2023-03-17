@@ -29,9 +29,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.6.0'
-    implementation 'com.google.android.exoplayer:exoplayer-hls:2.6.0'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.6.0'
+    // 2.8.x lost NoSuchMethodError: No static method getFont
+    //2.9.3 ExoPlayerFactory.newSimpleInstance is different
+    //2.6.0 ==2.7.0
+    implementation "com.google.android.exoplayer:exoplayer-core:$hls_exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-hls:$hls_exoplayer_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$hls_exoplayer_version"
 }
 
 def getStreamingUrl() {
